@@ -1,0 +1,64 @@
+
+  <nav class="navbar navbar-primary text-white sticky-top position-sticky" style="background-color:indigo">
+          
+                  <div class="navbar-brand" href="#">
+                          <i class="material-icons">
+                                  delete_sweep
+                                  </i>
+                              </div>
+                  
+              
+                <div class="navbar-brand-centered" style="display: block; left: 50%">Cart</div> 
+            </nav>
+            <nav class="navbar navbar-light sticky-top position-sticky" style="background-color:white">
+          
+              <div class="col-1">
+                      <div class="navbar-brand" href="#">
+                          
+                              <i class="material-icons">
+                                      perm_contact_calendar
+                                      </i>
+              
+                          </div>
+              </div>
+
+              <div class="col-11">
+                      <div class="input-group">
+                              <input  (focus)="onKey($event)" (keyup)="onKey($event)" (blur)="clear()" type="text" class="form-control" placeholder="Search Customer..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                              <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2"><i class="material-icons">
+                                      search
+                                      </i></span>
+                              </div>
+                          </div>
+                          <!-- <Ul>
+                            <li *ngFor="let c of customers" (click)="onSelected(c)">{{c.name}}</li>
+                          </Ul> -->
+
+                           
+                        <div class="input-group">
+                                <ul class="list-group input-group" style="z-index: 1; position: absolute;">
+                                  <li class="list-group-item list-group-item-action" *ngFor="let customer of customers" (click)="onSelected(customer)">
+                                          {{customer.name}}
+                                  </li>                                  
+                                </ul>
+                        </div> 
+              </div>
+              
+                 <div *ngIf='selectedCustomer' class="row">
+                        <div class="col-1">
+                                <i class="material-icons">person_pin</i>
+                        </div>
+                        <div  class="col-11">
+                                {{selectedCustomer.name}}
+                        </div>
+
+                 </div>
+
+                 <button (click)="report()">RELOAD</button>
+                
+                              
+
+            </nav>
+
+            {{cart}}
